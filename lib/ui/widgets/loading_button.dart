@@ -7,7 +7,7 @@ Widget buildLoadingButton(BuildContext context) {
   return SizedBox(
     height: 55,
     child: MaterialButton(
-      color: rwColorLight,
+      color: primaryColor,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
       onPressed: () {},
       child: Row(

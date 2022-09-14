@@ -6,7 +6,7 @@ import '../../utils/validators.dart';
 Widget buildEmailInputField(
     String hintText, TextEditingController emailController) {
   return TextFormField(
-    cursorColor: rwColor,
+    cursorColor: primaryColor,
     keyboardType: TextInputType.emailAddress,
     controller: emailController,
     validator: (emailController) => Validators.isValidEmail(emailController),

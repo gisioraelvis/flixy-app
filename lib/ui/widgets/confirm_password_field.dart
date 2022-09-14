@@ -7,12 +7,14 @@ class ConfirmPasswordInputField extends StatefulWidget {
   final String hintText;
   final TextEditingController passwordController;
   final TextEditingController confirmPasswordController;
+
   const ConfirmPasswordInputField({
     Key? key,
     required this.hintText,
     required this.passwordController,
     required this.confirmPasswordController,
   }) : super(key: key);
+
   @override
   State<ConfirmPasswordInputField> createState() =>
       _ConfirmPasswordInputField();
@@ -20,10 +22,11 @@ class ConfirmPasswordInputField extends StatefulWidget {
 
 class _ConfirmPasswordInputField extends State<ConfirmPasswordInputField> {
   var hidePassword = true;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      cursorColor: rwColor,
+      cursorColor: primaryColor,
       obscureText: hidePassword,
       controller: widget.confirmPasswordController,
       validator: (confirmPasswordController) => Validators.confirmPasswordMatch(

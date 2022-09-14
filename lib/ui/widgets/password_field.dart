@@ -6,19 +6,22 @@ import '../../utils/validators.dart';
 class PasswordInputField extends StatefulWidget {
   final String hintText;
   final TextEditingController passwordController;
+
   const PasswordInputField(
       {Key? key, required this.hintText, required this.passwordController})
       : super(key: key);
+
   @override
   State<PasswordInputField> createState() => _PasswordInputFieldState();
 }
 
 class _PasswordInputFieldState extends State<PasswordInputField> {
   var hidePassword = true;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      cursorColor: rwColor,
+      cursorColor: primaryColor,
       obscureText: hidePassword,
       controller: widget.passwordController,
       validator: (passwordController) =>
