@@ -4,7 +4,7 @@ import '../../colors.dart';
 
 Widget buildTextField(String hintText) {
   return TextField(
-    cursorColor: rwColor,
+    cursorColor: primaryColor,
     decoration: InputDecoration(
       border: const OutlineInputBorder(
         borderSide: BorderSide(

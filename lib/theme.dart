@@ -1,8 +1,9 @@
+import 'package:flixy/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
-  static TextTheme lightTextTheme = TextTheme(
+  static TextTheme lightThemeText = TextTheme(
     bodyText1: GoogleFonts.openSans(
       fontSize: 14.0,
       fontWeight: FontWeight.w700,
@@ -23,14 +24,24 @@ class AppTheme {
       fontWeight: FontWeight.w600,
       color: Colors.black,
     ),
+    headline4: GoogleFonts.openSans(
+      fontSize: 14.0,
+      fontWeight: FontWeight.w600,
+      color: Colors.black,
+    ),
+    headline5: GoogleFonts.openSans(
+      fontSize: 12.0,
+      fontWeight: FontWeight.w600,
+      color: Colors.black,
+    ),
     headline6: GoogleFonts.openSans(
-      fontSize: 20.0,
+      fontSize: 10.0,
       fontWeight: FontWeight.w600,
       color: Colors.black,
     ),
   );
 
-  static TextTheme darkTextTheme = TextTheme(
+  static TextTheme darkThemeText = TextTheme(
     bodyText1: GoogleFonts.openSans(
       fontSize: 14.0,
       fontWeight: FontWeight.w700,
@@ -51,8 +62,18 @@ class AppTheme {
       fontWeight: FontWeight.w600,
       color: Colors.white,
     ),
+    headline4: GoogleFonts.openSans(
+      fontSize: 14.0,
+      fontWeight: FontWeight.w600,
+      color: Colors.white,
+    ),
+    headline5: GoogleFonts.openSans(
+      fontSize: 12.0,
+      fontWeight: FontWeight.w600,
+      color: Colors.white,
+    ),
     headline6: GoogleFonts.openSans(
-      fontSize: 20.0,
+      fontSize: 10.0,
       fontWeight: FontWeight.w600,
       color: Colors.white,
     ),
@@ -61,27 +82,28 @@ class AppTheme {
   static ThemeData light() {
     return ThemeData(
       brightness: Brightness.light,
-      checkboxTheme:
-          CheckboxThemeData(fillColor: MaterialStateColor.resolveWith((states) {
-        return Colors.black;
-      })),
       appBarTheme: const AppBarTheme(
         foregroundColor: Colors.black,
         backgroundColor: Colors.white,
       ),
+      checkboxTheme:
+          CheckboxThemeData(fillColor: MaterialStateColor.resolveWith((states) {
+        return Colors.black;
+      })),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
         foregroundColor: Colors.white,
         backgroundColor: Colors.black,
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        selectedItemColor: Colors.green,
+        selectedItemColor: selectedItemColor,
       ),
-      textTheme: lightTextTheme,
+      textTheme: lightThemeText,
     );
   }
 
   static ThemeData dark() {
     return ThemeData(
+      splashColor: primaryColor,
       brightness: Brightness.dark,
       appBarTheme: AppBarTheme(
         foregroundColor: Colors.white,
@@ -89,12 +111,12 @@ class AppTheme {
       ),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
         foregroundColor: Colors.white,
-        backgroundColor: Colors.green,
+        backgroundColor: primaryColor,
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        selectedItemColor: Colors.green,
+        selectedItemColor: selectedItemColor,
       ),
-      textTheme: darkTextTheme,
+      textTheme: darkThemeText,
     );
   }
 }

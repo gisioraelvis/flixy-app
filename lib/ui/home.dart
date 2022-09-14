@@ -5,6 +5,7 @@ import '../navigation/routes.dart';
 
 class HomeScreen extends StatefulWidget {
   final int index;
+
   HomeScreen({required String tab, Key? key})
       : index = indexFrom(tab),
         super(key: key);
@@ -47,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text(
           'Flutter App',
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.headline2,
         ),
         actions: [
           profileButton(),
