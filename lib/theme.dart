@@ -2,7 +2,7 @@ import 'package:flixy/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AppTheme {
+class AppTheme with ChangeNotifier {
   static TextTheme lightThemeText = TextTheme(
     bodyText1: GoogleFonts.openSans(
       fontSize: 14.0,

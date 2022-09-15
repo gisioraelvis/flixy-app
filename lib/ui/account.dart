@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 import '../app_state/app_state_manager.dart';
+import '../app_state/app_theme.dart';
 import '../navigation/routes.dart';
 
 class AccountScreen extends StatefulWidget {
@@ -16,6 +17,8 @@ class _UserProfileState extends State<AccountScreen> {
   @override
   Widget build(BuildContext context) {
     AppState appState;
+    final themeProvider = Provider.of<DarkThemeProvider>(context);
+
     return Scaffold(
         appBar: AppBar(
           title: const Text('Account'),
@@ -45,6 +48,25 @@ class _UserProfileState extends State<AccountScreen> {
                     leading: const Icon(Icons.settings),
                     title: const Text('Settings'),
                     onTap: () => context.pushNamed(AppScreens.settings),
+                  ),
+                  const Divider(
+                    color: Colors.green,
+                    indent: 16,
+                    endIndent: 16,
+                  ),
+                  // btn to toggle dark mode on/off
+                  ListTile(
+                    leading: themeProvider.darkTheme
+                        ? const Icon(Icons.wb_sunny)
+                        : const Icon(Icons.nights_stay),
+                    title: themeProvider.darkTheme
+                        ? const Text('Light Mode')
+                        : const Text('Dark Mode'),
+                    onTap: () {
+                      final provider = Provider.of<DarkThemeProvider>(context,
+                          listen: false);
+                      provider.darkTheme = !provider.darkTheme;
+                    },
                   ),
                   const Divider(
                     color: Colors.green,
